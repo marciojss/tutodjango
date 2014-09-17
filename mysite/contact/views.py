@@ -5,7 +5,7 @@ from contact.forms import ContactForm, DocumentForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from contact.models import Document
-
+from dealer.git import git
 
 def list(request):
     # Handle file upload
@@ -20,14 +20,15 @@ def list(request):
     else:
         form = DocumentForm() # A empty, unbound form
 
+    print request.revision
     # Load documents for the list page
     documents = Document.objects.all()
 
     # Render list page with the documents and the form
     return render_to_response(
         'contact/list.html',
-        {'documents': documents, 'form': form},
-        context_instance=RequestContext(request)
+        {'documents': documents, 'form': form,'REVISION':request.revision},
+        context_instance=RequestContext(request),
     )
 
 
@@ -70,3 +71,6 @@ def thanks(request):
     template_name = 'contact/thanks.html'
     d = {}
     return render_to_response(template_name, d)
+
+def view(request):
+    return request.revision

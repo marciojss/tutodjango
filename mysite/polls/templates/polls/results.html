@@ -7,4 +7,7 @@
 </ul>
 
 <a href="{% url 'polls:detail' poll.id %}">Vote again?</a>
-
+<footer>
+<link href="/results.css?{{ REVISION }}" rel="stylesheet" type="text/css" media="screen" />
+<script src="/results.js?{{ REVISION }}"></script>
+</footer>

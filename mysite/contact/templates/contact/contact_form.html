@@ -9,10 +9,11 @@
 {% csrf_token %}
 {{ form.as_p }}
 	<input type="submit" value="enviar"/ >
+
 </form>
-
-
-
-
+<footer>
+<link href="/contact_form.css?{{ REVISION }}" rel="stylesheet" type="text/css" media="screen" />
+<script src="/contact_form.js?{{ REVISION }}"></script>
+</footer>	
 </body>
 </html>
