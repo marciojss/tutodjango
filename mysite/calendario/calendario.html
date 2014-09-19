@@ -8,29 +8,29 @@
     <title>MyCalendar Template</title>
 
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/calendario.js"></script>
     
     <h1>Breve Um Calendário Aqui!</h1>
-  <div class="container-fluid">
-    <div class="row">
-      <button class="btn btn-default pull-left">Previous</button>
-      <button class="btn btn-default pull-right">Next</button>
-    </div>  
+  </head>
+<body>
+    <div class="container">
+      <div class="row">
+        <button class="btn btn-default" id="Previous">Previous</button>
+        <button class="btn btn-default" id="Next">Next</button>
+      </div>
       <div class="row">
         <div class="table-responsive">
-          <table class="table table-bordered">
-            <tr class="active">
-              <td><a href="#">Dom</a></td>
-              <td>Seg</td>
-              <td>Ter</td>
-              <td>Qua</td>
-              <td>Qui</td>
-              <td>Sex</td>
-              <td>Sáb</td>
-            </tr>
-          </table>
+            <script type="text/javascript">
+              var today =  new Date();
+              var m = today.getMonth();
+              var cal = new Calendar(m);
+              cal.generateHTML();
+              document.write(cal.getHTML());
+            </script>
         </div>
       </div>
-  </div>
+    </div>
+</body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
