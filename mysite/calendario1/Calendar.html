@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Calendário</title>
+  
+  <script type="text/javascript" src="./Calendar_files/DateUtil.js"></script>
+  <script type="text/javascript" src="./Calendar_files/CalendarSimple.js"></script>
+  <link href="Calendar_files/CalendarSimple.css" rel="stylesheet">
+  <link href="Calendar_files/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<body>
+  <h2>Calendário</h2>
+
+  <form id="frmCalendar">
+    <select id="selMonth">
+      <option>Janeiro</option>
+      <option>Fevereiro</option>
+      <option>Março</option>
+      <option>Abril</option>
+      <option>Maio</option>
+      <option>Junho</option>
+      <option>Julho</option>
+      <option>Agosto</option>
+      <option>Setembro</option>
+      <option>Outubro</option>
+      <option>Novembro</option>
+      <option>Dezembro</option>
+    </select>
+    <input type="text" id="tfYear" size="4" maxlength="4">
+    <br><br>
+    
+    <input class="btn btn-dafault" type="button" id="btnPrevYear" value=" &lt;&lt;  ">
+    <input class="btn btn-dafault" type="button" id="btnPrevMonth" value="  &lt;  ">
+    <input class="btn btn-dafault" type="button" id="btnToday" value="Hoje">
+    <input class="btn btn-dafault" type="button" id="btnNextMonth" value="  &gt;  ">
+    <input class="btn btn-dafault" type="button" id="btnNextYear" value="  &gt;&gt; ">
+    <br><br>
+    <div class="table-responsive">
+      <table class="table table-bordered" id="tableCalendar">        
+      </table>
+    </div>
+  </form>
+</body>
+</html>
