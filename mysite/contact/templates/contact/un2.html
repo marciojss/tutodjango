@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>Chart</title>
+		<link href="{% static "contact/c3/c3.css" %}" rel="stylesheet" type="text/css">
+
+		<!-- Load d3.js and c3.js -->
+		<script src="{% static "contact/d3/d3.min.js" %}" charset="utf-8"></script>
+		<script src="{% static "contact/c3/c3.min.js" %}"></script>
+
+	</head>
+	<body>
+		<p> {{ res }}</p>
+		<div id="chart">
+			<script type="text/javascript">
+				var chart = c3.generate({
+				    data: {
+				        json: {{ res }},
+				    },
+				    axes: {
+				    	data2: 'y2'
+				    },
+				    axis:{
+				    	y2:{
+				    		show:true,
+				    		label:{
+				    			text: 'Y Label',
+				    			position: 'outer-middle'
+				    		}
+				    	}
+				    }
+
+				});
+			</script>
+		</div>
+	</body>
+</html>

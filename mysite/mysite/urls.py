@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
-	url(r'^bug/', include('contact.urls', namespace="con")),
+	url(r'^contact/', include('contact.urls', namespace="con")),
 	url(r'^polls/', include('polls.urls', namespace="polls")),
 	url(r'^servers/', include('cvteste.urls')),
 )

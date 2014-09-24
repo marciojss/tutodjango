@@ -5,7 +5,9 @@ from contact.forms import ContactForm, DocumentForm
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from contact.models import Document
-from dealer.git import git
+from random import randint
+import json
+
 
 def list(request):
     # Handle file upload
@@ -74,3 +76,74 @@ def thanks(request):
 
 def view(request):
     return request.revision
+
+def chart(request):
+    template_name = "contact/un.html"
+    resultado = []
+    count = 1
+    for i in range(4):
+        serie = []
+        for i in range(5):
+            serie.append(randint(0, 100))
+        resultado.append(serie)
+        serie = []
+        count += 1
+    c = {}
+    c['res'] = json.dumps(resultado)
+    c = RequestContext(request, c)
+
+    return render_to_response(template_name, c)
+
+
+def chart1(request):
+    template_name = "contact/un1.html"
+    resultado = []
+    count = 1
+    for i in range(4):
+        serie = []
+        for i in range(5):
+            serie.append(randint(0, 100))
+        resultado.append(serie)
+        serie = []
+        count += 1
+    c = {}
+    c['res'] = json.dumps(resultado)
+    c = RequestContext(request, c)
+
+    return render_to_response(template_name, c)
+
+
+def chart2(request):
+    template_name = "contact/un2.html"
+    resultado = []
+    count = 1
+    for i in range(4):
+        serie = []
+        for i in range(5):
+            serie.append(randint(0, 100))
+        resultado.append(serie)
+        serie = []
+        count += 1
+    c = {}
+    c['res'] = json.dumps(resultado)
+    c = RequestContext(request, c)
+
+    return render_to_response(template_name, c)
+
+
+def chart3(request):
+    template_name = "contact/un3.html"
+    resultado = []
+    count = 1
+    for i in range(4):
+        serie = []
+        for i in range(5):
+            serie.append(randint(0, 100))
+        resultado.append(serie)
+        serie = []
+        count += 1
+    c = {}
+    c['res'] = json.dumps(resultado)
+    c = RequestContext(request, c)
+
+    return render_to_response(template_name, c)
